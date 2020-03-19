@@ -1,0 +1,14 @@
+.footer {
+    background: #fafafa;
+    margin-top: 2rem;
+    text-align: center
+}
+
+.footer  a {
+    text-decoration: none;
+    
+}
+
+.footer a:active {
+    color: grey
+}
