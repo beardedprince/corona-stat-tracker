@@ -19,10 +19,10 @@ export class TrackerService {
       return this.http.get('https://api.coronatracker.com/news/trending');
     }
 
-    getNewsByID(title: string) {
-      this.getNews().subscribe(data => {
-        this.post = data['items'];
-      });
-      return this.post.find(post => post.title === title);
-    }
+    // getNewsByID(title: string) {
+    //   this.getNews().subscribe(data => {
+    //     this.post = data['items'];
+    //   });
+    //   return this.post.find(post => post.title === title);
+    // }
 }
