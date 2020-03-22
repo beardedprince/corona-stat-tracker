@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Router} from '@angular/router';
+import {TrackerService} from '../tracker.service';
 
 @Component({
   selector: 'app-news-feed',
   templateUrl: './news-feed.component.html',
   styleUrls: ['./news-feed.component.css']
 })
+
+
 export class NewsFeedComponent implements OnInit {
 
-  constructor() { }
+newList: any;
+  constructor(private router: Router, private route: ActivatedRoute, private tracker: TrackerService) {
+    console.log(this.router.getCurrentNavigation().extras.state);
+   }
 
   ngOnInit() {
+  this.newList = history.state;
+  const a = this.newList.items;
+  const b = JSON.stringify(a);
+  console.log(JSON.parse(b).items);
   }
 
 }

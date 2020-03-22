@@ -6,6 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class TrackerService {
 
+  post: any[];
     constructor(private http: HttpClient) { }
 
     getList() {
@@ -15,6 +16,13 @@ export class TrackerService {
 
     getNews() {
       const headers = new HttpHeaders({ 'Access-Control-Allow-Origin': '*'});
-      return this.http.get('http://api.coronatracker.com/news/trending');
+      return this.http.get('https://api.coronatracker.com/news/trending');
+    }
+
+    getNewsByID(title: string) {
+      this.getNews().subscribe(data => {
+        this.post = data['items'];
+      });
+      return this.post.find(post => post.title === title);
     }
 }
