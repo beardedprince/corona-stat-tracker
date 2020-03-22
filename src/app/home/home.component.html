@@ -24,7 +24,9 @@
           <p>{{news.description}} </p>
           
        </div>
-       <span class="read-more"> <a  href={{news.url}} target="__blank">Read More</a> </span>
+       
+       <!-- <span class="read-more"> <a (click)="gotoFeed()" >Read More</a> </span> -->
+       <span class="read-more"> <a routerLink = "{{news.url}}" target = "__blank" >Read More</a> </span>
       </div>
     </div>
 
