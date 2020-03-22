@@ -18,9 +18,6 @@ newList: any;
 
   ngOnInit() {
   this.newList = history.state;
-  const a = this.newList.items;
-  const b = JSON.stringify(a);
-  console.log(JSON.parse(b).items);
   }
 
 }
