@@ -1,7 +1,9 @@
 .footer {
     background: #fafafa;
     margin-top: 2rem;
-    text-align: center
+    text-align: center;
+    width: 100%;
+    padding: 2rem 1rem
 }
 
 .footer  a {

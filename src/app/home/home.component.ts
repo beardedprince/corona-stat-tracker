@@ -9,6 +9,7 @@ import { ActivatedRoute, Router} from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   trackerList: object;
+  globalStat: object;
   newList: object;
   title: string;
  public product = [{ id: '1', name: 'Angular'}];
@@ -24,6 +25,11 @@ export class HomeComponent implements OnInit {
       this.newList = data;
     });
 
+    this.tracker.getGlobalStat().subscribe( data => {
+      this.globalStat = data;
+      console.log(data);
+      
+    });
     // this.tracker.getNewsByID(this.title).subscribe( id => {
     //   this.route.params.subscribe(params => {
     //     console.log(params);

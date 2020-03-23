@@ -19,6 +19,10 @@ export class TrackerService {
       return this.http.get('https://api.coronatracker.com/news/trending');
     }
 
+    getGlobalStat() {
+      return this.http.get('https://api.coronatracker.com/v3/stats/worldometer/global');
+    }
+
     // getNewsByID(title: string) {
     //   this.getNews().subscribe(data => {
     //     this.post = data['items'];
