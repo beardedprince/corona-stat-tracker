@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
 
     this.tracker.getNews().subscribe( data => {
       this.newList = data;
+      console.log(data.hasOwnProperty.length);
     });
 
     this.tracker.getGlobalStat().subscribe( data => {
