@@ -1,17 +1,73 @@
+<div class="container">
+  
 <div class="statistics">
-  <div class="card" *ngFor="let list of trackerList">
-      <div class="card-header">
-          <h3>{{list.countryName}}</h3>
-      </div>
-    <div class="card-content">
-        <h4 class="confirmed">{{list.confirmed}} <span class="label">cases confirmed</span> </h4>
-        <h4 class="recovered">{{list.recovered}} <span class="label">recovered cases</span> </h4>
-        <h4 class="death"> {{list.deaths}} <span class="label">death cases</span> </h4>
+  <h3 class = "country">Global statistics</h3>
+    <div class="global-stats">
+  
+        <div class="global-card">
+            <div class="global-card-header ">
+                <h4>  Confirmed</h4>
+            </div>
+            <div class="global-card-content ">
+              <p>{{globalStat.totalConfirmed}}</p>
+            </div>
+        </div>
+      
+        <div class="global-card ">
+          <div class="global-card-header ">
+              <h4 > Recovered</h4>
+          </div>
+            <div class="global-card-content ">
+              <p > {{globalStat.totalRecovered}}</p>
+            </div>
+        </div>
+      
+        <div class="global-card">
+          <div class="global-card-header">
+              <h4 > Death</h4>
+          </div>
+            <div class="global-card-content">
+             <p > {{globalStat.totalDeaths}}</p>
+            </div>
+        </div>
+      
+        <div class="global-card">
+          <div class="global-card-header">
+            <h4>New Cases</h4>
+          </div>
+          <div class="global-card-content">
+            {{globalStat.totalNewCases}}
+          </div>
+        </div>
+      
+        <div class="global-card">
+            <div class="global-card-header">
+                <h4>New Deaths</h4>
+            </div>
+            <div class="global-card-content">
+              {{globalStat.totalNewDeaths}}
+            </div>
+            
+        </div>
+      
     </div>
+  <h3 class="country">Statistics by country</h3> <br><br>
+  <div class="card-holder">
+      <div class="card stat" *ngFor="let list of trackerList">
+          <div class="card-header">
+              <h3>{{list.countryName}}</h3>
+          </div>
+        <div class="card-content">
+            <h4 class="confirmed">{{list.confirmed}} <span class="label">cases confirmed</span> </h4>
+            <h4 class="recovered">{{list.recovered}} <span class="label">recovered cases</span> </h4>
+            <h4 class="death"> {{list.deaths}} <span class="label">death cases</span> </h4>
+        </div>
+      </div>
   </div>
 </div>
 
 <div class="news">
+  <h3 class="country"> News Alert </h3>
     <div class="news-card" *ngFor= "let news of newList.items">
         <div class="news-card-header">
             <h3>{{news.title}}</h3>
@@ -30,7 +86,10 @@
       </div>
     </div>
 
-    <app-footer></app-footer>
+    
 
 </div>
 
+
+</div>
+<app-footer></app-footer>

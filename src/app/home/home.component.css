@@ -1,74 +1,153 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
 
-.statistics {
-    background: #f4f4f4 ;
-    
-    padding: 2rem 2rem;
-    display: flex;
+.container {
+    width: 100%;
+    background: #f4f4f4;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 60% 40%
+}
+
+.global-stats {
+    border: 2px solid grey;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
     justify-content: space-between;
-    position: fixed;
-    width: 60%;
-    height: 100vh;
-    flex-direction: row;
-    flex-wrap: wrap;
-    scroll-margin: 2;
-    z-index: 1;
-    overflow-y: auto;
+    margin-bottom: 4.5rem;
+    padding: 1rem .5rem;
+    z-index: 1000;
+    height: 25%;
+    width: 100%;
     
+}
+
+.global-stats h3 {
+    
+    margin-bottom: 2rem;
+    background: #f4f4f4;
+    
+    
+}
+.global-card {
+    
+    
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+    text-align: center;
+    font-weight: 700;
+   
+    border-radius: 5px;
+    font-size: 1rem;
+    
+}
+
+.global-card .global-card-header {
+    background: #fafafa;
+    padding: 5px 10px;
+    font-size: 1rem;
     
 }
 
 
-.card {
+.global-card .global-card-content {
     background: #fff;
-    width: 22%; 
-    
+    margin-bottom: .5rem;
+    padding: 10px 10px;
+   
+
+}
+
+.country {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.country::before {
+    content: '';
+    width: 50px;
+    height: 5px;
+    background: #c91c55;
+    padding: 0 2rem;
+    position: absolute;
+    top: 59px;
+    margin-bottom: 1rem;
+}
+
+
+
+.statistics {
+    background: #fff;
+    padding: 2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card-holder {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.card {
+    background: #f4f4f4;
     margin-bottom: 2rem;
     border-radius: 5px;
-    box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.0164);
+    box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.0164);
+    justify-content: space-between
 }
 
 .card-header, .news-card-header {
     background: #fafafa;
     margin-bottom: .5rem;
     padding: 5px 10px
+
 }
 
 .card-content, .news-card-content  {
     padding: 10px
 }
 
-.card-content h4 {
-    
+.card-content h4 {   
     font-size: .8rem
 }
 
-.card-content .confirmed {
-    
-    
+.confirmed {
     color: #e53e3e;
-    
 }
 
-.card-content .death {
+/* .confirmed-bg {
+    background :#ffe3e37a !important
+} */
+
+.death {
     
-    
-    color: #718096;
-    font-weight: bold
+    font-weight: bold;
+    color:#718096 !important; 
 }
 
-.card-content .recovered {
+/* .death-bg {
     
-    color: #38a169;
-    
+    font-weight: bold;
+    background:  #edf2f7  !important
+} */
+
+
+ .recovered {
+    color: #478500 !important;
 }
+
+/* .recovered-bg {
+    background: #7ecea3 !important;
+} */
 
 .card-content h4 .label {
     color: grey;
 }
 
 .news{
-    width: calc(100% - 60%);
     margin-left: auto;
     background: #f4f4f4;
     padding: 2rem 2rem;
@@ -107,7 +186,6 @@
 
 }
 
-
 .read-more {
     position: absolute;
     right: 0;
@@ -122,26 +200,76 @@
 }
 
 @media (max-width: 900px) {
+    .container {
+        display: grid;
+        padding: 0;
+    }
     .statistics {
-        background: #f4f4f4 ;
-        
+        background: #fff ;
         padding: 2rem 2rem;
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         justify-content: space-between;
-        
         width: 100%;
-        
         flex-direction: row;
         flex-wrap: wrap;
-        display: none
+        grid-column: 1/3;
+        grid-row: 1/2;
+        position: relative;
+    }
+
+    .country {
+        margin-bottom: 1rem;
+        width: 100%;
+        grid-column: 1/4;
+    }
+
+    .country::before {
+        content: '';
+        width: 50px;
+        height: 2px;
+        background: #c91c55;
+        padding: 0 2rem;
+        position: absolute;
+
+        
+    }
+    
+    .global-stats {
+        display: grid;
+        grid-column: 1/6;
+        border: none;
+        
+    }
+
+    .global-card {
+     
         
     }
 
     .news{
+        
+        display: grid;
+        background: #fff;
+        padding: 0 2rem;
+        grid-column: 1/3;
+        grid-column-gap: 1rem;
+    }
+
+    .card-holder {
+        display: grid;
+        grid-column: 1/6;
+        grid-template-columns: repeat(3, 1fr);
+        width: auto;
+
+    }
+
+    .card {
         width: 100%;
-        
-        background: #f4f4f4;
-        padding: 2rem 2rem;
-        
+        margin-right: 1rem;
+        background: #f4f4f4; 
+        margin-bottom: 2rem;
+        border-radius: 5px;
+        box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.0164);
     }
 }
